@@ -78,3 +78,9 @@
     width:40%;
     height:100%;
 }
+
+/* 하이퍼링크 데코레이션 삭제 */
+.none-deco{
+    text-decoration: none;
+    color:black;
+}
