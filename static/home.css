@@ -1,0 +1,80 @@
+/* 미니홈피 업뎃뉴스, 미니룸 표시, 컨테이너 : box, 아이템 : box-news, box-room */
+.box-news {
+    flex: 0.4;
+    /** 내부 레이아웃을 위해 container로 설정 */
+    display: flex;
+    flex-direction: column;
+}
+.box-room {
+    flex: 1;
+    /** 내부 레이아웃을 위해 container로 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 사진첩, 게시판, 다이어리 등을 표시하기 위한 header, content 표시, 컨테이너 : .box-news, 아이템 : box-news-header, box-news-content */
+.box-news-header {
+    flex: 0.2;
+    border-bottom: 1px solid gray;
+    margin-bottom:5px;
+}
+.box-news-content {
+    flex: 1;
+    /** 내부 레이아웃을 위해 contatiner로 설정 */
+    display: flex;
+}
+
+/* 사진첩, 게시판 등을 표시 컨테이너: .box-news-content, 아이템: .box-news-txt, .box-news-num */
+.box-news-txt {flex: 1.2; 
+    /* 내부 레이아웃을 위해 container로 설정, container 속성으로 item들을 정렬 */
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-bottom: 2rem;
+}
+.box-news-num {flex:1}
+
+/* 다이어리, 사진첩, 방명록, 게시판을 표시하기 위한 container, 컨테이너:menu-row, 아이템 : menu-item 곱하기 2 */
+.menu-row {
+    border-bottom: 1px dashed gray;
+    /*내부 레이아웃을 위해 container로 설정 */
+    display: flex;
+}
+.menu-item {flex:1}
+/* 게시판, 다이어리 등의 숫자 색깔 표시 */
+.menu-num {color:rgb(40, 107, 196)}
+
+/* box-room 제목 내용 표시 */
+.box-room-header {
+    flex:0.1;
+    border-bottom: 1px solid grey;
+}
+.box-room-content {
+    flex:1;
+    background-color: #fdceeb;
+    position:relative;
+    /* 하위 item 요소의 가운데 정렬을 위하여 container로 설정 */
+    display: flex;
+    justify-content: center;
+}
+
+/* 말풍선을 표시하기 위한 absolute 2가지 box-room-say-one, box-room-say-two */
+.box-room-say-one {
+    font-family: 'GyeonggiBatang';
+    position: absolute;
+    top:60px;
+    left:100px;
+    color:black;
+}
+.box-room-say-two {
+    font-family: 'GyeonggiBatang';
+    position: absolute;
+    bottom:200px;
+    right:40px;
+    color:black;
+}
+/* 미니룸 이미지 크기 설정 , 컨테이너: box-room-content, 아이템: box-room-img*/
+.box-room-img {
+    width:40%;
+    height:100%;
+}

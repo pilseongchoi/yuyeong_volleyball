@@ -1,0 +1,70 @@
+.content-box {
+    position:relative
+}
+
+.scroll-box {
+    position: absolute;
+    top:15px;
+    right:15px;
+    bottom:15px;
+    left:15px;
+    overflow:auto;
+}
+
+.guestbook-title {
+    padding: 0.5rem;
+    background-color: #eee;
+    padding-left:1rem;
+}
+
+.guestbook-title > span {
+    margin-right: 0.5rem;
+}
+
+.guest-name {
+    color:blue;
+}
+
+.guestbook-contents {
+    margin-bottom:2rem;
+    /* 내부 레이아웃을 위한 컨테이너 : visit-content , 아이템 : visit-picture, visit-text */
+    display: flex;
+    align-items: center;
+}
+
+.guestbook-image {
+    flex:0.4;
+    background-size: cover;
+    margin:1rem;
+    
+    display:flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.background-1 {
+    background-image: url(./images/background-image1.jpg);
+}
+
+.background-2 {
+    background-image: url(./images/background-image2.jpg);
+}
+
+.background-3 {
+    background-image: url(./images/background-image3.jpg);
+}
+
+.background-4 {
+    background-image: url(./images/background-image1.jpg);
+}
+
+.guestbook-memo {
+    flex:1;
+    font-family: 'BMEuljiro10yearslater';
+    font-size:1rem; 
+}
+
+.guestbook-image > img {
+    width: 120px;
+    height: 120px;
+}

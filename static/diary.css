@@ -1,0 +1,117 @@
+.date-box {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    height: 3rem;
+
+    border:1px solid #e7e7e7;
+    /* 컨테이너: date-box, 아이템: today, date-list */
+    display:flex;
+    align-items: center;
+}
+
+.today {
+    flex:0 0 2rem;/* 2rem 크기(너비)에서 커지지도 작아지지도 않도록 적용 */
+    margin: 0 1rem;
+}
+
+.date-list {
+    flex:1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.date {
+    flex:0 0 1.5rem; /* 1.5rem 크기(row니까 너비)에서 커지지도 작아지지도 않게 적용 */
+    color: #707070;
+    text-align: center;
+    cursor:pointer; /* 커서가 올라가면 손모양으로 바뀜 */
+}
+
+.scroll-box {
+    /* date-box 아래로 떨어지도록 두는 absolute 적용 */
+    position:absolute;
+    margin-top:4rem; /* date-box 높이 보다 더 크게 */
+    top:15px;
+    left:15px;
+    right:15px;
+    bottom:15px;
+    /* 스크롤 속성 */
+    overflow:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.diary-box {
+    margin-bottom: 1.5rem;
+    border:1px solid #e7e7e7;
+}
+
+.diary-title {
+    font-family: 'LAB디지털';
+    margin: 1rem 2rem;
+    text-align: left;   
+}
+
+.diary-content {
+    font-family: 'Cafe24Oneprettynight';
+    margin: 1rem 2rem;
+    text-align: center;
+    font-size:1.5rem;
+}
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    margin:1rem;
+}
+
+/* 버튼 흰색으로 안 보이게 처리 */
+button {
+    font-family: 'BMEuljiro10yearslater';
+    background-color: #fff;
+    border:none;
+    color:#fff;
+    padding: 1rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 800ms ease all; /* 0.8초(?) 동안 빨라졌다 느려졌다 빨라졌다 스피드로 애니메이션 효과 */
+}
+
+/* 버튼에 마우스가 올려지면 나타나기 */
+.button-box > button:hover {
+    font-family: 'BMEuljiro10yearslater';
+    background: rgb(243, 99, 178);
+    color:white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+}
+
+/* 비밀일기 박스 */
+#secret-box {
+    display: none;
+    border: 1px solid #e7e7e7;
+}
+/* 비밀일기 제목 */
+#secret-title {
+    font-family: 'LAB디지털';
+    margin: 1rem 2rem;
+    color:rgb(243, 99, 178);
+    font-weight: bold;
+}
+ 
+/* 비밀일기 텍스트 */
+#secret-text {
+    font-family: 'Cafe24Oneprettynight';
+    margin: 1rem 2rem;
+    text-align: center;
+    font-size:1.5rem;
+}
+
+/* 기타 CSS 속성 */
+.color-blue {color:blue}
+.color-emerald {color:rgb(99, 133, 243)}

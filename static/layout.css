@@ -1,0 +1,195 @@
+body {
+    background: rgb(163,163,163) url("../static/images/pattern.png");
+    background-size: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /** rem 단위 사용을 위한 기본 폰트 설정 */
+    font: 16px 'Bazzi';
+}
+
+.bookcover {
+    background-color: rgb(243, 140, 228);
+    border-radius: 9px;
+    border: 1px solid rgb(139,149,152);
+    width: 960px;
+    height: 660px;
+    margin: 100px auto;
+    position: relative; /* 상대위치 적용을 위한 relative */
+}
+
+.bookdot {
+    background-color: rgb(241, 167, 230);
+    border-radius: 9px;
+    border: 3px dashed #e4617d;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.page {
+    background-color: #eee;
+    border-radius: 9px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    /** flex container로 설정 */
+    display: flex;
+    padding: 5px;
+}
+
+/* page container 의 item, profile-container(0.4) : content-contatiner(1) : menu-container(0.15) */
+.profile-container {
+    flex:0.4;
+    padding: 10px;
+    /** 내부 레잉아웃을 위해 flex container로 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container {
+    flex: 1;
+    padding: 0 0 10px 0;
+    /** 내부 레잉아웃을 위해 flex container로 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-container {
+    flex: 0.15;
+    margin: 10px 10px 10px 0;
+    padding-top: 40px;
+    /** 내부 레이아웃을 위해 flex container로 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+/** profile-container, content-contatiner 컨테이너의 아이템 - header, profile-box, content-box */
+.header {padding:5px;flex: 0.1}
+
+.profile-box {
+    background-color: white; 
+    flex: 3;
+    border-radius: 10px;
+    border 1px solid #cdcdcd;
+    padding: 20px;
+    /** 내부 레이아웃을 위해 container로 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.content-box {
+    background-color: white; 
+    flex: 3;
+    border-radius: 10px;
+    border 1px solid #cdcdcd;
+    padding: 20px;
+    /** 내부 레이아웃을 위해 container로 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    /* 내부의 사진첩 박스 크기 지정을 위한 상대위치 포지션 */
+    position:relative;
+}
+
+/* 프로필 사진, 텍스트, 이름 표시, 컨테이너 : box, 아이템 : box-img, box-txt, box-name */
+.box-img {flex: none; text-align: center;}
+.box-txt {flex: auto; font-size: 1.2rem; padding-top:20px; padding-left:15px}
+.box-name {flex: 0.5 auto; font-family: 'Nanum Pen Script', cursive; font-size: 2rem}
+.box-img-image {width: 100%;height: 100%}
+
+/* 미니홈피 이름, url 표시, 컨테이너 : .content-title, 아이템 : content-title-name, content-title-url */
+.content-title {display: flex; align-items:flex-end}
+.content-title-name > a {text-decoration: none;color:black}
+.content-title-name {flex: 1;font-size: 1.1rem;font-family:'Recipekorea'}
+.content-title-url {flex: 0.5; font-size:0.8rem;text-align: end}
+
+/* 파도타기 박스 표시 */
+.profile-dropdown {
+    flex:0;
+    border:1px solid gray;
+    padding:5px;
+    font-size: 0.8rem;
+    /* dropdown 박스의 숨김, 나타남 기능을 위한 relative */
+    position:relative;
+}
+
+/* 파도타기 타이틀, 삼각형 컨테이너: dropdwon-btn, 아이템: dropdown-title, triangle-down */
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 파도타기 박스 삼각형 표시 */
+.triangle-down {
+    width:0;
+    height:0;
+    border-left:4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    border-top: 5px solid #838383;
+}
+
+/* 파도타기 내용 숨김처리 */
+.dropdown--hidden {
+    display: none;
+    /* 상위 태그에서 상대위치 적용 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* 파도타기 마우스 올리면 보이기 */
+.profile-dropdown:hover > .dropdown--hidden {display: block}
+
+/* 파도타기 하위 링크 속성*/
+.dropdown--hidden > a {
+    display: block; /* 한 줄 차지 */
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* 그림자 */
+    width:100%; /* 길이 */
+    padding: 6px;
+    color: black;
+    text-decoration: none; /* a 태그 기본 속성 삭제 */
+}
+
+/* 파도타기 링크에 마우스 올리면 속성 적용 */
+.dropdown--hidden > a:hover {background-color:#f1f1f1}
+
+/* 메뉴 a 태그 박스 속성 */
+.menu-container > a.box {
+    margin-top: 10px;
+    width: 80%;
+    height: 4%;
+    padding: 4px;
+    text-decoration: none; /* a 태그 기본 속성 제거 */
+    background-color: #3b87ab;
+    color:white;
+}
+
+/* 메뉴 a 태그 테두리 속성 */
+.menu-container > a.elevated {border-radius: 0 5px 5px 0}
+    
+/* 메뉴 a 태그 마우스 올리면 속성 변경 */
+.menu-container > a:hover {background-color:white;color:rgb(67, 67, 226)}
+
+/** 기타 CSS 속성 */
+.profile-title {text-align: center;font-size: 0.6rem}
+.color-red {color: red}
+.color-white {color:white}
+.color-sky {font-size:1.5rem; font-weight:bold; color:cornflowerblue}
+.bottom-dot {border-bottom: 1px dashed gray}
+.bgcolor-red {background-color: rgb(211, 75, 75); display: inline-block; padding:3px}
+.bgcolor-blue {background-color: rgb(87, 87, 231); display: inline-block; padding:3px}
+.border-round {border-radius: 3px}

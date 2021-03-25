@@ -1,0 +1,41 @@
+/* 사진첩 박스 스크롤 속성 */
+.box-photo {
+    position: absolute; /* content-box 내부에서 스크롤 적용을 위한 박스 크기 지정을 위한 absolute */
+    top:10px;
+    left:10px;
+    right:10px;
+    bottom:10px;
+    /* 사진첩 제목, 사진, 텍스트 표시를 위한 컨테이너 : box-photo, 아이템: box-photo-title, box-photo-img, box-photo-txt */
+    display: flex;
+    flex-direction: column;
+    /* 스크롤 속성 */
+    overflow: auto;
+}
+
+/* 사진첩 제목 속성 */
+.box-photo-title {
+    flex:0.2;
+    background-color: #eee;
+    font-size: 1.5rem;
+    margin:10px;
+    padding:5px;
+}
+
+/* 사진첩의 사진 박스 크기 지정 */
+.box-photo-img {
+    flex:1;
+    width: 480px; /* 세로사진, 가로사진 비율이 다른 크기를 자동 맞춤 위해 height는 지정 X */
+    margin: 20px;
+}
+
+/* 사진첩의 사진 크기 자동 조절 */
+.box-photo-img > img {
+    width: 100%; /* 가로길이에 맞추어 되도록 width를 100%로 지정 */
+}
+
+/* 사진첩 텍스트 속성 */
+.box-photo-txt {
+    flex:0.1;
+    font-size: 1.2rem;
+    margin: 0 0 40px 20px; /* 사진과는 붙어 있고, 아래 제목과는 떨어뜨린 마진값 */
+}

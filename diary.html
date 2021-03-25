@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>2021 MINI HOMEPAGE</title>
+        <link rel="stylesheet" href="./static/font.css" />
+        <link rel="stylesheet" href="./static/layout.css" />
+        <link rel="stylesheet" href="./static/diary.css" />
+        <script src="https://kit.fontawesome.com/7f927aa332.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="bookcover">
+            <div class="bookdot">
+                <div class="page">
+                    <div class="profile-container">
+                        <div class="header">TODAY <span class="color-red">28</span> | TOTAL 234918</div>
+                        <div class="profile-box">
+                            <div class="box-img">
+                                <img class="box-img-image" src="./static/images/dy02.jpg" alt="프로필 이미지">
+                            </div>
+                            <div class="box-txt">
+                                <div> 우주최강 유영 배구부 ♬</div>
+                                <div> </div>
+                                <div> </div>
+                                <div> </div>
+                                <div> </div>
+                            </div>
+                            <div class="box-name"> 유영초등학교 배구부 </div>
+                            <div class="profile-dropdown">
+                                <div class="dropdown-btn">
+                                    <div class="dropdown-title">파도타기</div>
+                                    <div class="triangle-down"></div>
+                                </div>
+                                <div class="dropdown--hidden">
+                                    <a href="https://cafe.naver.com/codeuniv" target="_blank"> 가기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <div class="header">
+                            <div class="content-title">
+                                <div class="content-title-name">
+                                    <a href="https://pilseongchoi.github.io/mini-homepage/home.html"> 유영 배구부થ 추억 앨범...♥ ʕ•ჲ•ʔ ♡</a>
+                                </div>
+                                <div class="content-title-url">https://pilseongchoi.github.io/mini-homepage/home.html</div>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <div class="date-box">
+                                <div class="today"><span class="color-emerald">02.23 TUE</span></div>
+                                <div class="date-list">
+                                    <div class="date">1</div>
+                                    <div class="date">2</div>
+                                    <div class="date">3</div>
+                                    <div class="date"><span class="color-blue">4</span></div>
+                                    <div class="date"><span class="color-red">5</span></div>
+                                    <div class="date">6</div>
+                                    <div class="date">7</div>
+                                    <div class="date">8</div>
+                                    <div class="date">9</div>
+                                    <div class="date">10</div>
+                                    <div class="date"><span class="color-blue">11</span></div>
+                                    <div class="date"><span class="color-red">12</span></div>
+                                    <div class="date">13</div>
+                                    <div class="date">14</div>
+                                    <div class="date">15</div>
+                                    <div class="date">16</div>
+                                    <div class="date">17</div>
+                                    <div class="date"><span class="color-blue">18</span></div>
+                                    <div class="date"><span class="color-red">19</span></div>
+                                    <div class="date">20</div>
+                                    <div class="date">21</div>
+                                    <div class="date">22</div>
+                                    <div class="date">23</div>
+                                    <div class="date">24</div>
+                                    <div class="date"><span class="color-blue">25</span></div>
+                                    <div class="date"><span class="color-red">26</span></div>
+                                    <div class="date">27</div>
+                                    <div class="date">28</div>
+                                    <div class="date">29</div>
+                                    <div class="date">30</div>
+                                </div>
+                            </div>
+                            <div class = "scroll-box">
+                                <div class="diary-box">
+                                    <div class="diary-title color-emerald">2021.03.24 수 12:19</div>
+                                    <div class="diary-content">
+                                        단양에 도착했다<br>.<br>.<br>.<br>두근 두근
+                                    </div>
+                                </div>
+                                <div class="diary-box">
+                                    <div class="diary-title color-emerald">2021.03.25 목 11:30</div>
+                                    <div class="diary-content">
+                                        예선 첫 경기 vs 대전 신탄진초<br><br>드디어 첫승!<br>오 ~ 예 !
+                                    </div>
+                                </div>
+                                <div class="diary-box">
+                                    <div class="diary-title color-emerald">2021.03.26 금 15:00</div>
+                                    <div class="diary-content">
+                                        예선 2 경기 vs 제천 남천초<br><br>
+                                    </div>
+                                </div>
+                                <div id = "secret-box">
+                                    <div id = "secret-title">배구부 비밀일기</div>
+                                    <div id = "secret-text"></div>
+                                </div>
+                                <div class="button-box">
+                                    <button id="button" onclick="getTextFile()"><i class="fas fa-lock"></i> 아구몬쓰의 비밀일기 보기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-container">
+                        <a class="box elevated" href="./home.html">홈</a>
+                        <a class="box elevated" href="./diary.html">다이어리</a>
+                        <a class="box elevated" href="./photo.html">사진첩</a>
+                        <a class="box elevated" href="./guestbook.html">방명록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function getTextFile() {
+                var input = document.createElement("input");
+                input.type = "file";
+                input.accept = "text/plain";
+                input.onchange = function(event) {
+                    clickbutton();    
+                    processfile(event.target.files[0]);
+                };
+                input.click();
+            }
+
+            function processfile(file) {
+                var reader = new FileReader();
+                reader.readAsText(file, "utf-8");
+                reader.onload = function() {
+                    document.getElementById("secret-text").innerText = reader.result;
+                };
+            }
+
+            function clickbutton() {
+                document.getElementById("secret-box").style.display = "block";
+        
+            }
+        </script>
+    </body>
+</html>
